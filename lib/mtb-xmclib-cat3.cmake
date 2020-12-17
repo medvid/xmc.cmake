@@ -1,0 +1,125 @@
+xmc_load_library(
+  NAME mtb-xmclib-cat3
+  VERSION 0.5.0
+)
+
+set(MTB_XMCLIB_CAT3_SOURCES
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_acmp.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_bccu.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_can.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_can_map.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_ccu4.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_ccu8.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_common.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_dac.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_device.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_dma.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_dma_map.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_dsd.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_ebu.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_ecat.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_ecat_map.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_eru.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_eth_mac.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_eth_mac_map.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_eth_phy.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_fce.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_flash.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_gpio.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_hrpwm.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_hrpwm_map.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_i2c.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_i2s.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_ledts.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_math.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_pau.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_posif.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_posif_map.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_prng.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_rtc.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_scu.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_sdmmc.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_spi.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_uart.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_usbd.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_usbd_regs.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_usbh.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_usic.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_vadc.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_vadc_map.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc_wdt.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc1_ccu4_map.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc1_ccu8_map.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc1_eru_map.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc1_flash.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc1_gpio.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc1_gpio_map.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc1_rtc.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc1_scu.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc1_usic_map.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc4_ccu4_map.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc4_ccu8_map.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc4_eru_map.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc4_flash.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc4_gpio.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc4_gpio_map.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc4_rtc.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc4_scu.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc/xmc4_usic_map.h
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_acmp.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_bccu.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_can.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_ccu4.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_ccu8.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_common.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_dac.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_dma.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_dsd.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_ebu.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_ecat.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_eru.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_eth_mac.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_eth_phy_dp83848.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_eth_phy_ksz8031rnl.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_eth_phy_ksz8081rnb.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_fce.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_gpio.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_hrpwm.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_i2c.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_i2s.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_ledts.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_math.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_pau.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_posif.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_prng.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_rtc.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_sdmmc.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_spi.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_uart.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_usbd.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_usbh.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_usic.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_vadc.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc_wdt.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc1_eru.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc1_flash.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc1_gpio.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc1_rtc.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc1_scu.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc4_eru.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc4_flash.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc4_gpio.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc4_rtc.c
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/src/xmc4_scu.c
+)
+set(MTB_XMCLIB_CAT3_INCLUDE_DIRS
+  ${MTB_XMCLIB_CAT3_DIR}/XMCLib/inc
+  ${MTB_XMCLIB_CAT3_DIR}/
+)
+set(MTB_XMCLIB_CAT3_LINK_LIBRARIES
+  core-lib cmsis-core
+)
+
+add_library(mtb-xmclib-cat3 STATIC EXCLUDE_FROM_ALL ${MTB_XMCLIB_CAT3_SOURCES})
+target_include_directories(mtb-xmclib-cat3 PUBLIC ${MTB_XMCLIB_CAT3_INCLUDE_DIRS})
+target_link_libraries(mtb-xmclib-cat3 PUBLIC ${MTB_XMCLIB_CAT3_LINK_LIBRARIES})

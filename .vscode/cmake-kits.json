@@ -1,0 +1,130 @@
+[
+    {
+        "name": "KIT_XMC14_BOOT_001/NOOS/GCC",
+        "cmakeSettings": {
+            "TARGET": "KIT_XMC14_BOOT_001",
+            "OS": "NOOS",
+            "TOOLCHAIN": "GCC"
+        }
+    },
+    {
+        "name": "KIT_XMC14_BOOT_001/NOOS/ARM",
+        "cmakeSettings": {
+            "TARGET": "KIT_XMC14_BOOT_001",
+            "OS": "NOOS",
+            "TOOLCHAIN": "ARM"
+        }
+    },
+    {
+        "name": "KIT_XMC14_BOOT_001/NOOS/IAR",
+        "cmakeSettings": {
+            "TARGET": "KIT_XMC14_BOOT_001",
+            "OS": "NOOS",
+            "TOOLCHAIN": "IAR"
+        }
+    },
+    {
+        "name": "KIT_XMC14_BOOT_001/NOOS/LLVM",
+        "cmakeSettings": {
+            "TARGET": "KIT_XMC14_BOOT_001",
+            "OS": "NOOS",
+            "TOOLCHAIN": "LLVM"
+        }
+    },
+    {
+        "name": "KIT_XMC14_BOOT_001/FREERTOS/GCC",
+        "cmakeSettings": {
+            "TARGET": "KIT_XMC14_BOOT_001",
+            "OS": "FREERTOS",
+            "TOOLCHAIN": "GCC"
+        }
+    },
+    {
+        "name": "KIT_XMC14_BOOT_001/FREERTOS/ARM",
+        "cmakeSettings": {
+            "TARGET": "KIT_XMC14_BOOT_001",
+            "OS": "FREERTOS",
+            "TOOLCHAIN": "ARM"
+        }
+    },
+    {
+        "name": "KIT_XMC14_BOOT_001/FREERTOS/IAR",
+        "cmakeSettings": {
+            "TARGET": "KIT_XMC14_BOOT_001",
+            "OS": "FREERTOS",
+            "TOOLCHAIN": "IAR"
+        }
+    },
+    {
+        "name": "KIT_XMC14_BOOT_001/FREERTOS/LLVM",
+        "cmakeSettings": {
+            "TARGET": "KIT_XMC14_BOOT_001",
+            "OS": "FREERTOS",
+            "TOOLCHAIN": "LLVM"
+        }
+    },
+    {
+        "name": "KIT_XMC47_RELAX_V1/NOOS/GCC",
+        "cmakeSettings": {
+            "TARGET": "KIT_XMC47_RELAX_V1",
+            "OS": "NOOS",
+            "TOOLCHAIN": "GCC"
+        }
+    },
+    {
+        "name": "KIT_XMC47_RELAX_V1/NOOS/ARM",
+        "cmakeSettings": {
+            "TARGET": "KIT_XMC47_RELAX_V1",
+            "OS": "NOOS",
+            "TOOLCHAIN": "ARM"
+        }
+    },
+    {
+        "name": "KIT_XMC47_RELAX_V1/NOOS/IAR",
+        "cmakeSettings": {
+            "TARGET": "KIT_XMC47_RELAX_V1",
+            "OS": "NOOS",
+            "TOOLCHAIN": "IAR"
+        }
+    },
+    {
+        "name": "KIT_XMC47_RELAX_V1/NOOS/LLVM",
+        "cmakeSettings": {
+            "TARGET": "KIT_XMC47_RELAX_V1",
+            "OS": "NOOS",
+            "TOOLCHAIN": "LLVM"
+        }
+    },
+    {
+        "name": "KIT_XMC47_RELAX_V1/FREERTOS/GCC",
+        "cmakeSettings": {
+            "TARGET": "KIT_XMC47_RELAX_V1",
+            "OS": "FREERTOS",
+            "TOOLCHAIN": "GCC"
+        }
+    },
+    {
+        "name": "KIT_XMC47_RELAX_V1/FREERTOS/ARM",
+        "cmakeSettings": {
+            "TARGET": "KIT_XMC47_RELAX_V1",
+            "OS": "FREERTOS",
+            "TOOLCHAIN": "ARM"
+        }
+    },
+    {
+        "name": "KIT_XMC47_RELAX_V1/FREERTOS/IAR",
+        "cmakeSettings": {
+            "TARGET": "KIT_XMC47_RELAX_V1",
+            "OS": "FREERTOS",
+            "TOOLCHAIN": "IAR"
+        }
+    },
+    {
+        "name": "KIT_XMC47_RELAX_V1/FREERTOS/LLVM",
+        "cmakeSettings": {
+            "TARGET": "KIT_XMC47_RELAX_V1",
+            "OS": "FREERTOS",
+            "TOOLCHAIN": "LLVM"
+        }
+    }
+]

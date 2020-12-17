@@ -1,0 +1,10 @@
+# Load application definitions
+include(app/empty-app.cmake)
+include(app/gpio-toggle.cmake)
+include(app/ccu4-capture.cmake)
+include(app/ccu4-pwm.cmake)
+include(app/ccu4-timer.cmake)
+include(app/ccu4-timer-concatenation.cmake)
+include(app/uart-printf.cmake)
+include(app/uart-shell.cmake)
+include(app/uart-dma.cmake)
