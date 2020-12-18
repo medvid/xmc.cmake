@@ -1,5 +1,5 @@
 # NOTE: reusing psoc6.cmake docker image
-# SW dependencies are the same (CMake, Ninja, GCC, LLVM, ModusToolbox 2.2)
+# SW dependencies are the same (CMake, Ninja, GCC, LLVM, ModusToolbox 2.2.1)
 
 resources:
   containers:
