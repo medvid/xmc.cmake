@@ -14,7 +14,7 @@
 
     [https://www.cypress.com/ModusToolboxForWindows][ModusToolboxForWindows]
 
-2. Download and install ModusToolbox 2.2.1:
+2. Download and install ModusToolbox 2.2.1 (patch on top of 2.2):
 
     [https://www.cypress.com/file/515781/download][ModusToolboxForWindows-2.2.1]
 
@@ -80,7 +80,7 @@
 
     [https://www.cypress.com/ModusToolboxForMac][ModusToolboxForMac]
 
-2. Download and install ModusToolbox 2.2.1:
+2. Download and install ModusToolbox 2.2.1 (patch on top of 2.2):
 
     [https://www.cypress.com/file/515776/download][ModusToolboxForMac-2.2.1]
 
@@ -108,7 +108,7 @@
 
     [https://www.cypress.com/ModusToolboxForLinux][ModusToolboxForLinux]
 
-2. Download and install ModusToolbox 2.2.1:
+2. Download and install ModusToolbox 2.2.1 (patch on top of 2.2):
 
     [https://www.cypress.com/file/515771/download][ModusToolboxForLinux-2.2.1]
 
@@ -278,7 +278,7 @@ The docker image is built on top of unofficial ModusToolbox Docker image: [vmmed
 
 * It is possible to call the Ninja program directly, for example:
 
-        ninja -C build/KIT_XMC14_BOOT_001/NOOS/GCC/Debug empty-app_PROGRAM
+        ninja -C build/KIT_XMC14_BOOT_001/NOOS/GCC/Debug empty-app
 
     Often it is useful to call the ninja with additional arguments.
     For example, the below command enables verbosity and disables parallel compilation:
