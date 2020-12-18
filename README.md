@@ -281,7 +281,7 @@ Build all FreeRTOS enabled applications in Release mode:
 
 Azure Pipeline is executed for each commit in master and each GitHub Pull Request:
 
-https://dev.azure.com/vmedvid/xmc.cmake/_build?definitionId=4&_a=summary
+https://dev.azure.com/vmedvid/xmc.cmake/_build?definitionId=8
 
 The pipeline builds all applications with GCC 9.3.1 toolchain on [vmmedvid/psoc6.cmake](https://hub.docker.com/r/vmmedvid/psoc6.cmake) Docker image.
 The docker image is built on top of unofficial ModusToolbox Docker image: [vmmedvid/modustoolbox](https://hub.docker.com/r/vmmedvid/modustoolbox).
