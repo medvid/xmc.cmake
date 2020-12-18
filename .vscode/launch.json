@@ -36,14 +36,12 @@
             "device": "XMC1404-Q064x0200",
             "preLaunchCommands": [
                 // Program via the hex file to get complete coverage
-                "exec-file ${command:cmake.launchTargetPath}"
+                //"exec-file ${command:cmake.launchTargetPath}"
             ],
             "demangle": true,
-            // svdFile is optional, it can be very large.
-            "svdFile": "",
+            "svdFile": "${workspaceFolder}/lib/mtb-xmclib-cat3/CMSIS/Infineon/SVD/XMC1400.svd",
             "runToMain": true,          // if true, program will halt at main. Not used for a restart
-            "preLaunchTask": "Build: Build [Debug]", // Set this to run a task from tasks.json before
-                                                     // starting a debug session
+            "preLaunchTask": "",        // Set this to run a task from tasks.json before starting a debug session
             "showDevDebugOutput": false // When set to true, displays output of GDB.
                                         // This is helpful when something is not working right
         },
@@ -57,10 +55,9 @@
             "cwd": "${workspaceRoot}",
             "executable": "${command:cmake.launchTargetPath}",
             "servertype": "jlink",
-            "device": "Cortex-M4",
+            "device": "Cortex-M0",
             "demangle": true,
-            // svdFile is optional, it can be very large.
-            "svdFile": "",
+            "svdFile": "${workspaceFolder}/lib/mtb-xmclib-cat3/CMSIS/Infineon/SVD/XMC1400.svd",
             "showDevDebugOutput": false // When set to true, displays output of GDB.
                                         // This is helpful when something is not working right
         },
@@ -74,9 +71,9 @@
             "servertype": "jlink",
             "device": "XMC1404-Q064x0200",
             "overrideLaunchCommands": [
-                "monitor reset 2",      // Reset via the reset pin
+                "monitor reset",      // Reset both core and the peripherals
                 "monitor flash erase",
-                "monitor reset 0",      // Reset both core and the peripherals
+                "monitor reset",      // Reset both core and the peripherals
                 "quit"
             ],
             "showDevDebugOutput": false // When set to true, displays output of GDB.
@@ -92,9 +89,9 @@
             "servertype": "jlink",
             "device": "XMC1404-Q064x0200",
             "overrideLaunchCommands": [
-                "monitor reset 2",      // Reset via the reset pin
+                "monitor reset",      // Reset both core and the peripherals
                 "-target-download",
-                "monitor reset 0",      // Reset both core and the peripherals
+                "monitor reset",      // Reset both core and the peripherals
                 "monitor go",
                 "quit"
             ],
@@ -111,14 +108,12 @@
             "device": "XMC4700-F144x2048",
             "preLaunchCommands": [
                 // Program via the hex file to get complete coverage
-                "exec-file ${command:cmake.launchTargetPath}"
+                //"exec-file ${command:cmake.launchTargetPath}"
             ],
             "demangle": true,
-            // svdFile is optional, it can be very large.
-            "svdFile": "",
+            "svdFile": "${workspaceFolder}/lib/mtb-xmclib-cat3/CMSIS/Infineon/SVD/XMC4700.svd",
             "runToMain": true,          // if true, program will halt at main. Not used for a restart
-            "preLaunchTask": "Build: Build [Debug]", // Set this to run a task from tasks.json before
-                                                     // starting a debug session
+            "preLaunchTask": "",        // Set this to run a task from tasks.json before starting a debug session
             "showDevDebugOutput": false // When set to true, displays output of GDB.
                                         // This is helpful when something is not working right
         },
@@ -134,8 +129,7 @@
             "servertype": "jlink",
             "device": "Cortex-M4",
             "demangle": true,
-            // svdFile is optional, it can be very large.
-            "svdFile": "",
+            "svdFile": "${workspaceFolder}/lib/mtb-xmclib-cat3/CMSIS/Infineon/SVD/XMC4700.svd",
             "showDevDebugOutput": false // When set to true, displays output of GDB.
                                         // This is helpful when something is not working right
         },
@@ -149,9 +143,9 @@
             "servertype": "jlink",
             "device": "XMC4700-F144x2048",
             "overrideLaunchCommands": [
-                "monitor reset 2",      // Reset via the reset pin
+                "monitor reset",      // Reset both core and the peripherals
                 "monitor flash erase",
-                "monitor reset 0",      // Reset both core and the peripherals
+                "monitor reset",      // Reset both core and the peripherals
                 "quit"
             ],
             "showDevDebugOutput": false // When set to true, displays output of GDB.
@@ -167,9 +161,9 @@
             "servertype": "jlink",
             "device": "XMC4700-F144x2048",
             "overrideLaunchCommands": [
-                "monitor reset 2",      // Reset via the reset pin
+                "monitor reset",      // Reset both core and the peripherals
                 "-target-download",
-                "monitor reset 0",      // Reset both core and the peripherals
+                "monitor reset",      // Reset both core and the peripherals
                 "monitor go",
                 "quit"
             ],
