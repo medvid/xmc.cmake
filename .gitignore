@@ -17,6 +17,7 @@ bsp/*
 lib/*
 !app/*.cmake
 !bsp/*.cmake
+!bsp/*.cfg
 !lib/*.cmake
 
 .vscode/*
