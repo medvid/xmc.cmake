@@ -18,15 +18,19 @@
 
     [https://www.cypress.com/file/515781/download][ModusToolboxForWindows-2.2.1]
 
-3. Download and install the latest Git for Windows:
+3. Download and install J-Link Software:
+
+    https://www.segger.com/downloads/jlink/JLink_Windows.exe
+
+4. Download and install the latest Git for Windows:
 
     https://gitforwindows.org/
 
-4. Download and install the latest CMake win64-x64 Installer:
+5. Download and install the latest CMake win64-x64 Installer:
 
     https://cmake.org/download/
 
-5. Download Ninja executable, add to user PATH:
+6. Download Ninja executable, add to user PATH:
 
     https://github.com/ninja-build/ninja/releases
 
@@ -38,7 +42,7 @@
 
     Then add %LOCALAPPDATA%\Programs\Ninja to user PATH in Windows advanced system settings.
 
-6. _(Optional)_ Download and install the latest GNU Arm Embedded toolchain:
+7. _(Optional)_ Download and install the latest GNU Arm Embedded toolchain:
 
     https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads
 
@@ -46,7 +50,7 @@
 
         C:/Program Files (x86)/GNU Arm Embedded Toolchain/9 2020-q2-update
 
-7. _(Optional)_ Download and install Arm Compiler 6:
+8. _(Optional)_ Download and install Arm Compiler 6:
 
     https://developer.arm.com/tools-and-software/embedded/arm-compiler/downloads/version-6
 
@@ -64,7 +68,7 @@
 
     Note: valid license is required to use the Arm Compiler.
 
-8. _(Optional)_ Download and install IAR Embedded Workbench for ARM:
+9. _(Optional)_ Download and install IAR Embedded Workbench for ARM:
 
     https://www.iar.com/iar-embedded-workbench/#!?architecture=Arm
 
@@ -84,17 +88,21 @@
 
     [https://www.cypress.com/file/515776/download][ModusToolboxForMac-2.2.1]
 
-3. Install Xcode - this provides git client
+3. Download and install J-Link Software:
 
-4. Download and install Homebrew Package Manager:
+    https://www.segger.com/downloads/jlink/JLink_MacOSX.pkg
+
+4. Install Xcode - this provides git client
+
+5. Download and install Homebrew Package Manager:
 
     https://brew.sh
 
-5. Install CMake and Ninja using Homebrew:
+6. Install CMake and Ninja using Homebrew:
 
     brew install cmake ninja
 
-6. _(Optional)_ Download and install the latest GNU Arm Embedded toolchain:
+7. _(Optional)_ Download and install the latest GNU Arm Embedded toolchain:
 
     https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads
 
@@ -112,7 +120,11 @@
 
     [https://www.cypress.com/file/515771/download][ModusToolboxForLinux-2.2.1]
 
-3. Download and install Git, CMake>=3.16 and Ninja using the system package manager.
+3. Download and install J-Link Software:
+
+    https://www.segger.com/downloads/jlink/JLink_Linux_x86_64.deb
+
+4. Download and install Git, CMake>=3.16 and Ninja using the system package manager.
 
     Example for Ubuntu 20.04:
 
@@ -121,7 +133,7 @@
     Note: Ubuntu 18.04 provides an old version CMake, not compatible with CMake recipes in this repo.
     To download latest CMake package, follow the instructions at https://apt.kitware.com.
 
-4. _(Optional)_ Download and install the latest GNU Arm Embedded toolchain:
+5. _(Optional)_ Download and install the latest GNU Arm Embedded toolchain:
 
     https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads
 
