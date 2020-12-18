@@ -7,6 +7,9 @@ xmc_load_bsp(
 # Set target MPN
 xmc_set_device(XMC1404-Q064x0200)
 
+# Set J-Link target device name
+xmc_set_jlink_device(XMC1404-0200)
+
 # Set target CPU core
 xmc_set_core(CM0)
 

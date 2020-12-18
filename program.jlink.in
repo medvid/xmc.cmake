@@ -1,0 +1,5 @@
+// https://wiki.segger.com/J-Link_Commander#-CommandFile
+r
+loadfile @_hex_path@
+r
+q

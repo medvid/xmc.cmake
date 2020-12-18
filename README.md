@@ -170,9 +170,9 @@
 
         cmake --build build/KIT_XMC14_BOOT_001/NOOS/GCC/Debug
 
-6. Program empty-app application to the XMC MCU:
+6. Program gpio-toggle application to the XMC MCU:
 
-        cmake --build build/KIT_XMC14_BOOT_001/NOOS/GCC/Debug --target empty-app_PROGRAM
+        cmake --build build/KIT_XMC14_BOOT_001/NOOS/GCC/Debug --target gpio-toggle_PROGRAM
 
 ## Usage - Visual Studio Code
 
@@ -238,11 +238,11 @@
 
 6. In the Command Palette, type: "CMake: Configure", wait while the CMake project is configured.
 
-7. Type "CMake: Build Target", and select the build target, for example: empty-app_PROGRAM. Wait while the empty-app application is built and programmed.
+7. Type "CMake: Build Target", and select the build target, for example: gpio-toggle_PROGRAM. Wait while the gpio-toggle application is built and programmed.
 
 8. Switch to the Debug tab on the left Panel, select the debug configuration Launch (KitProg3).
 
-9. Select the target ELF file, that corresponds to the CMake selected build target. For example, select "empty-app.elf" in case the current CMake target is "empty-app_PROGRAM".
+9. Select the target ELF file, that corresponds to the CMake selected build target. For example, select "gpio-toggle.elf" in case the current CMake target is "gpio-toggle_PROGRAM".
 
 10. The Cortex-Debug extension should start the debugging session using OpenOCD and KitProg3 CMSIS-DAP built-in debugger.
 
@@ -290,7 +290,7 @@ The docker image is built on top of unofficial ModusToolbox Docker image: [vmmed
 
 * It is possible to call the Ninja program directly, for example:
 
-        ninja -C build/KIT_XMC14_BOOT_001/NOOS/GCC/Debug empty-app
+        ninja -C build/KIT_XMC14_BOOT_001/NOOS/GCC/Debug gpio-toggle_PROGRAM
 
     Often it is useful to call the ninja with additional arguments.
     For example, the below command enables verbosity and disables parallel compilation:

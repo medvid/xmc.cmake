@@ -67,6 +67,22 @@ macro(xmc_add_tools)
   endif()
 endmacro()
 
+# Configure J-Link definitions
+macro(xmc_configure_jlink)
+  # Determine the default path to J-Link CLI
+  if(DEFINED ENV{CY_JLINK_PATH})
+    set(CY_JLINK_DEFAULT_PATH "$ENV{CY_JLINK_PATH}")
+  elseif(WIN32) # Windows
+    set(CY_JLINK_DEFAULT_PATH "$ENV{ProgramFiles\(x86\)}/SEGGER/JLink/JLink")
+  elseif(APPLE) # MacOS
+    set(CY_JLINK_DEFAULT_PATH "/Applications/SEGGER/JLink/JLink")
+  else() # Linux
+    set(CY_JLINK_DEFAULT_PATH "JLink") # expect in PATH
+  endif()
+  set(CY_JLINK_PATH ${CY_JLINK_DEFAULT_PATH} CACHE PATH "Path to J-Link executable")
+  message(STATUS CY_JLINK_PATH=${CY_JLINK_PATH})
+endmacro()
+
 # Configure toolchain definitions
 macro(xmc_configure_toolchain)
   set(TOOLCHAIN GCC CACHE STRING "Target toolchain")
@@ -130,6 +146,16 @@ macro(xmc_set_device device)
   string(REPLACE "-" "_" device_macro ${DEVICE})
   add_definitions(-D${device_macro})
   unset(device_macro)
+endmacro()
+
+# Set J-Link target device name
+macro(xmc_set_jlink_device device)
+  if("${device}" STREQUAL "")
+    message(FATAL_ERROR "xmc_set_jlink_device: missing required 'device' argument.")
+  endif()
+
+  # Initialize global CY_JLINK_DEVICE variable
+  set(CY_JLINK_DEVICE ${device} CACHE STRING "J-Link target device name")
 endmacro()
 
 # Add CPU-specific compilation definitions
@@ -487,6 +513,7 @@ macro(xmc_add_executable)
   # Define toolchain-specific post-build actions for ELF target
   set(_hex_path ${CMAKE_CURRENT_BINARY_DIR}/${TARGET_NAME}.hex)
   set(_asm_path ${CMAKE_CURRENT_BINARY_DIR}/${TARGET_NAME}.asm)
+  set(_jlink_cmd_path ${CMAKE_CURRENT_BINARY_DIR}/${TARGET_NAME}.jlink)
   if(${TOOLCHAIN} STREQUAL GCC)
     # Convert ELF to HEX
     add_custom_command(TARGET ${TARGET_NAME} POST_BUILD
@@ -507,7 +534,6 @@ macro(xmc_add_executable)
     add_custom_command(TARGET ${TARGET_NAME} POST_BUILD
       COMMAND ${ARM_TOOLCHAIN_PATH}/bin/fromelf --output "${_hex_path}" --i32combined "$<TARGET_FILE:${TARGET_NAME}>"
       USES_TERMINAL)
-    unset(_hex_path)
 
     # Generate disassembly listing
     add_custom_command(TARGET ${TARGET_NAME} POST_BUILD
@@ -523,7 +549,6 @@ macro(xmc_add_executable)
     add_custom_command(TARGET ${TARGET_NAME} POST_BUILD
       COMMAND ${IAR_TOOLCHAIN_PATH}/bin/ielftool --ihex "$<TARGET_FILE:${TARGET_NAME}>" "${_hex_path}"
       USES_TERMINAL)
-    unset(_hex_path)
 
     # Generate disassembly listing
     add_custom_command(TARGET ${TARGET_NAME} POST_BUILD
@@ -550,7 +575,27 @@ macro(xmc_add_executable)
       COMMAND ${LLVM_TOOLCHAIN_PATH}/bin/llvm-size --format=berkeley --totals "$<TARGET_FILE:${TARGET_NAME}>"
       USES_TERMINAL)
   endif()
+
+  # Create J-Link command file
+  configure_file(
+    ${CMAKE_SOURCE_DIR}/program.jlink.in
+    ${_jlink_cmd_path}
+  )
+
+  # Define custom target for J-Link programming
+  add_custom_target(${TARGET_NAME}_PROGRAM
+    COMMAND ${CY_JLINK_PATH}
+      -AutoConnect 1 -Device ${CY_JLINK_DEVICE} -If SWD -Speed 4000 -NoGui -ExitOnError
+      -CommandFile ${_jlink_cmd_path}
+    DEPENDS ${TARGET_NAME}
+    COMMENT "Program ${TARGET_NAME} application"
+    VERBATIM USES_TERMINAL
+  )
+
+  # Clear local variables
   unset(_hex_path)
+  unset(_asm_path)
+  unset(_jlink_cmd_path)
 endmacro()
 
 # Check the application is applicable to the target BSP

@@ -8,6 +8,9 @@ include(xmc.cmake)
 # Load ModusToolbox tool definitions
 xmc_add_tools(VERSION 2.2.1)
 
+# Configure J-Link
+xmc_configure_jlink()
+
 # Configure toolchain definitions
 xmc_configure_toolchain()
 
