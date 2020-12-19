@@ -48,7 +48,7 @@
 
     Installation path assumed in this guide:
 
-        C:/Program Files (x86)/GNU Arm Embedded Toolchain/9 2020-q2-update
+        C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2020-q4-major
 
 8. _(Optional)_ Download and install Arm Compiler 6:
 
@@ -108,7 +108,7 @@
 
     Installation path assumed in this guide:
 
-        $HOME/Applications/gcc-arm-none-eabi-9-2020-q2-update
+        /Applications/ARM
 
 ### Install prerequisites - Linux
 
@@ -139,12 +139,12 @@
 
     Installation path assumed in this guide:
 
-        /opt/gcc-arm-none-eabi-9-2020-q2-update
+        /opt/gcc-arm-none-eabi-10-2020-q4-major
 
     CLI installation example:
 
-        curl -fsSL https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2020q2/gcc-arm-none-eabi-9-2020-q2-update-x86_64-linux.tar.bz2 -o /tmp/gcc-arm-none-eabi-9-2020-q2-update-x86_64-linux.tar.bz2
-        sudo tar -C /opt -xjf /tmp/gcc-arm-none-eabi-9-2020-q2-update-x86_64-linux.tar.bz2
+        curl -fsSL https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2 -o /tmp/gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
+        sudo tar -C /opt -xjf /tmp/gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
 
 ## Quick Start Guide - CLI
 
@@ -199,7 +199,7 @@
             "cortex-debug.armToolchainPath": "${config:modustoolbox.toolsPath}/gcc/bin",
             "cmake.configureSettings": {
                 "CY_TOOLS_PATHS": "${env:HOME}/ModusToolbox/tools_2.2",
-                "GCC_TOOLCHAIN_PATH": "C:/Program Files (x86)/GNU Arm Embedded Toolchain/9 2020-q2-update",
+                "GCC_TOOLCHAIN_PATH": "C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2020-q4-major",
                 "ARM_TOOLCHAIN_PATH": "C:/Keil_v5/ARM/ARMCLANG",
                 "IAR_TOOLCHAIN_PATH": "C:/Program Files (x86)/IAR Systems/Embedded Workbench 8.4/arm"
             }
@@ -215,7 +215,7 @@
             "cortex-debug.armToolchainPath": "${config:modustoolbox.toolsPath}/gcc/bin",
             "cmake.configureSettings": {
                 "CY_TOOLS_PATHS": "/Applications/ModusToolbox/tools_2.2",
-                "GCC_TOOLCHAIN_PATH": "${env:HOME}/Applications/gcc-arm-none-eabi-9-2020-q2-update"
+                "GCC_TOOLCHAIN_PATH": "/Applications/ARM"
             }
         }
         ```
@@ -229,7 +229,7 @@
             "cortex-debug.armToolchainPath": "${config:modustoolbox.toolsPath}/gcc/bin",
             "cmake.configureSettings": {
                 "CY_TOOLS_PATHS": "${env:HOME}/tools_2.2",
-                "GCC_TOOLCHAIN_PATH": "/opt/gcc-arm-none-eabi-9-2020-q2-update"
+                "GCC_TOOLCHAIN_PATH": "/opt/gcc-arm-none-eabi-10-2020-q4-major"
             }
         }
         ```
@@ -283,7 +283,7 @@ Azure Pipeline is executed for each commit in master and each GitHub Pull Reques
 
 https://dev.azure.com/vmedvid/xmc.cmake/_build?definitionId=8
 
-The pipeline builds all applications with GCC 9.3.1 toolchain on [vmmedvid/psoc6.cmake](https://hub.docker.com/r/vmmedvid/psoc6.cmake) Docker image.
+The pipeline builds all applications with GCC 10.2.1 toolchain on [vmmedvid/psoc6.cmake](https://hub.docker.com/r/vmmedvid/psoc6.cmake) Docker image.
 The docker image is built on top of unofficial ModusToolbox Docker image: [vmmedvid/modustoolbox](https://hub.docker.com/r/vmmedvid/modustoolbox).
 
 ## Additional tips
@@ -305,7 +305,7 @@ The docker image is built on top of unofficial ModusToolbox Docker image: [vmmed
         rm -rf build/KIT_XMC14_BOOT_001/NOOS/GCC/Debug
         cmake -G Ninja -S . -B build/KIT_XMC14_BOOT_001/NOOS/GCC/Debug \
             -DTARGET=KIT_XMC14_BOOT_001 -DOS=NOOS -DTOOLCHAIN=GCC \
-            -DGCC_TOOLCHAIN_PATH="C:/Program Files (x86)/GNU Arm Embedded Toolchain/9 2020-q2-update" \
+            -DGCC_TOOLCHAIN_PATH="C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2020-q4-major" \
             -DCMAKE_BUILD_TYPE=Debug
 
 [ModusToolboxForWindows]: http://dlm.cypress.com.edgesuite.net/akdlm/downloadmanager/software/ModusToolbox/ModusToolbox_2.2/ModusToolbox_2.2.0.2801-windows-install.exe
