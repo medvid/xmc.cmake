@@ -75,7 +75,7 @@ macro(xmc_configure_jlink)
   elseif(WIN32) # Windows
     set(CY_JLINK_DEFAULT_PATH "$ENV{ProgramFiles\(x86\)}/SEGGER/JLink/JLink")
   elseif(APPLE) # MacOS
-    set(CY_JLINK_DEFAULT_PATH "/Applications/SEGGER/JLink/JLink")
+    set(CY_JLINK_DEFAULT_PATH "/Applications/SEGGER/JLink/JLinkExe")
   else() # Linux
     set(CY_JLINK_DEFAULT_PATH "JLink") # expect in PATH
   endif()
