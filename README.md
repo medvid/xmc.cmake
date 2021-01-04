@@ -168,11 +168,11 @@
 
 5. Build all applications enabled for the selected TARGET and OS combination:
 
-        cmake --build build/KIT_XMC14_BOOT_001/NOOS/GCC/Debug
+        cmake --build build/TARGET_KIT_XMC14_BOOT_001/NOOS/GCC/Debug
 
 6. Program gpio-toggle application to the XMC MCU:
 
-        cmake --build build/KIT_XMC14_BOOT_001/NOOS/GCC/Debug --target gpio-toggle_PROGRAM
+        cmake --build build/TARGET_KIT_XMC14_BOOT_001/NOOS/GCC/Debug --target gpio-toggle_PROGRAM
 
 ## Usage - Visual Studio Code
 
@@ -290,20 +290,20 @@ The docker image is built on top of unofficial ModusToolbox Docker image: [vmmed
 
 * It is possible to call the Ninja program directly, for example:
 
-        ninja -C build/KIT_XMC14_BOOT_001/NOOS/GCC/Debug gpio-toggle_PROGRAM
+        ninja -C build/TARGET_KIT_XMC14_BOOT_001/NOOS/GCC/Debug gpio-toggle_PROGRAM
 
     Often it is useful to call the ninja with additional arguments.
     For example, the below command enables verbosity and disables parallel compilation:
 
-        cd build/KIT_XMC14_BOOT_001/NOOS/GCC/Debug
+        cd build/TARGET_KIT_XMC14_BOOT_001/NOOS/GCC/Debug
         ninja -v -j1
 
 * When switching between toolchain versions (cmake -DGCC_TOOLCHAIN_PATH), the old toolchain version
   is sometimes cached in the CMake build directory. The most reliable way to address this is to delete
   the build directory before switching the toolchain version:
 
-        rm -rf build/KIT_XMC14_BOOT_001/NOOS/GCC/Debug
-        cmake -G Ninja -S . -B build/KIT_XMC14_BOOT_001/NOOS/GCC/Debug \
+        rm -rf build/TARGET_KIT_XMC14_BOOT_001/NOOS/GCC/Debug
+        cmake -G Ninja -S . -B build/TARGET_KIT_XMC14_BOOT_001/NOOS/GCC/Debug \
             -DTARGET=KIT_XMC14_BOOT_001 -DOS=NOOS -DTOOLCHAIN=GCC \
             -DGCC_TOOLCHAIN_PATH="C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2020-q4-major" \
             -DCMAKE_BUILD_TYPE=Debug
