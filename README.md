@@ -162,7 +162,7 @@
 
 4. Generate Ninja build rules using CMake. Example that generates build recipes for bare-metal applications targeting KIT_XMC14_BOOT_001 board and GCC toolchain:
 
-        cmake -G Ninja -S . -B build/TARGET_KIT_XMC14_BOOT_001/NOOS/GCC/Debug \
+        cmake -G Ninja -S . -B build/KIT_XMC14_BOOT_001/NOOS/GCC/Debug \
             -DTARGET=KIT_XMC14_BOOT_001 -DOS=NOOS -DTOOLCHAIN=GCC \
             -DCMAKE_BUILD_TYPE=Debug
 
