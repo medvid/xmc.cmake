@@ -1,6 +1,6 @@
 # CMake based build system for Infineon XMC designs
 
-[![Build Status](https://dev.azure.com/vmedvid/xmc.cmake/_apis/build/status/medvid.xmc.cmake?branchName=master)](https://dev.azure.com/vmedvid/xmc.cmake/_build/latest?definitionId=4&branchName=master)
+[![Build Status](https://dev.azure.com/vmedvid/xmc.cmake/_apis/build/status/medvid.xmc.cmake?branchName=master)](https://dev.azure.com/vmedvid/xmc.cmake/_build/latest?definitionId=11&branchName=master)
 
 ## Prerequisites
 
