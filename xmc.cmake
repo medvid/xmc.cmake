@@ -466,6 +466,11 @@ macro(xmc_add_executable)
     list(PREPEND TARGET_LINK_LIBRARIES bsp)
   endif()
 
+  # Explicitly link the startup source for armlink
+  if(${TOOLCHAIN} STREQUAL ARM)
+    target_sources(${TARGET_NAME} PRIVATE ${BSP_STARTUP})
+   endif()
+
   # Check if the application provides custom design.modus
   if(DEFINED TARGET_DESIGN_MODUS)
     xmc_add_design_modus(

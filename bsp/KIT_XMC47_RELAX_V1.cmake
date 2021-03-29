@@ -39,7 +39,9 @@ if(${TOOLCHAIN} STREQUAL GCC)
   )
   set(BSP_LINKER_SCRIPT ${BSP_DIR}/TOOLCHAIN_GCC_ARM/XMC4700x2048.ld)
 elseif(${TOOLCHAIN} STREQUAL ARM)
-  list(APPEND BSP_SOURCES
+  # ARM linker workaround: do not add startup assembly to libbsp.a
+  # The assembly source is linked directly by xmc_add_executable
+  set(BSP_STARTUP
     ${MTB_XMCLIB_CAT3_DIR}/CMSIS/Infineon/COMPONENT_XMC4700/Source/TOOLCHAIN_ARM/startup_XMC4700.s
   )
   set(BSP_LINKER_SCRIPT ${BSP_DIR}/TOOLCHAIN_ARM/XMC4700x2048.sct)
