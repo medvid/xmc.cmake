@@ -62,6 +62,7 @@ include_directories(${BSP_DIR})
 include_directories(${MTB_XMCLIB_CAT3_DIR}/CMSIS/Infineon/COMPONENT_XMC4700/Include)
 
 # Add common definitions and components
+add_definitions(-DTARGET_KIT_XMC47_RELAX_V1)
 xmc_add_component(BSP_DESIGN_MODUS)
 xmc_add_component(CAT3)
 xmc_add_component(XMC4)
