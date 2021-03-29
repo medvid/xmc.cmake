@@ -1,3 +1,8 @@
+# LLVM is not currently supported by this FreeRTOS/clib-support port
+if(${TOOLCHAIN} STREQUAL LLVM)
+  return()
+endif()
+
 # Load library definitions
 include(lib/freertos.cmake)
 include(lib/clib-support.cmake)
