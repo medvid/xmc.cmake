@@ -28,7 +28,6 @@ macro(xmc_add_tools)
   string(REPLACE "." ";" _tools_version_list ${TOOLS_VERSION})
   list(GET _tools_version_list 0 TOOLS_VERSION_MAJOR)
   list(GET _tools_version_list 1 TOOLS_VERSION_MINOR)
-  list(GET _tools_version_list 2 TOOLS_VERSION_PATCH)
   unset(_tools_version_list)
 
   # Try to determine the default path for a provided tools VERSION

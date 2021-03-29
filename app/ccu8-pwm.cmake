@@ -1,7 +1,7 @@
-project(empty-app)
+project(ccu8-pwm)
 
 xmc_load_application(
-  NAME mtb-example-xmc-empty-app
+  NAME mtb-example-xmc-ccu8-pwm
   VERSION 1.0.0
 )
 

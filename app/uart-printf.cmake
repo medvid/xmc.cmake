@@ -13,7 +13,7 @@ project(uart-printf)
 
 xmc_load_application(
   NAME mtb-example-xmc-uart-printf
-  VERSION 0.5.0
+  VERSION 1.0.0
 )
 
 xmc_add_executable(

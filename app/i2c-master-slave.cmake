@@ -1,12 +1,13 @@
 # This application provides custom design.modus for the below boards
 xmc_check_bsp(
+  KIT_XMC14_BOOT_001
   KIT_XMC47_RELAX_V1
 )
 
-project(uart-dma)
+project(i2c-master-slave)
 
 xmc_load_application(
-  NAME mtb-example-xmc-uart-dma
+  NAME mtb-example-xmc-i2c-master-slave
   VERSION 1.0.0
 )
 

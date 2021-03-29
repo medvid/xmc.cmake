@@ -3,10 +3,10 @@ xmc_check_bsp(
   KIT_XMC47_RELAX_V1
 )
 
-project(uart-dma)
+project(dma-ring-buffer)
 
 xmc_load_application(
-  NAME mtb-example-xmc-uart-dma
+  NAME mtb-example-xmc-dma-ring-buffer
   VERSION 1.0.0
 )
 

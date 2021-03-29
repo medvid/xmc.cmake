@@ -52,7 +52,7 @@ case "$KERNEL" in
     export ARM_TOOLCHAIN_PATH="$(cygpath --mixed "${ARM_TOOLCHAIN_PATH:-C:/Program Files/ARMCompiler6.13}")"
     export IAR_TOOLCHAIN_PATH="$(cygpath --mixed "${IAR_TOOLCHAIN_PATH:-C:/Program Files (x86)/IAR Systems/Embedded Workbench 8.4/arm}")"
     export LLVM_TOOLCHAIN_PATH="$(cygpath --mixed "${LLVM_TOOLCHAIN_PATH:-C:/Program Files/LLVM}")"
-    default_toolchain_list="GCC ARM IAR"
+    default_toolchain_list="GCC ARM IAR LLVM"
     ;;
   Linux*)
     export GCC_TOOLCHAIN_PATH="${GCC_TOOLCHAIN_PATH:-/opt/gcc-arm-none-eabi-10-2020-q4-major}"
@@ -127,10 +127,10 @@ echo "OS list: ${os_list[*]}"
 echo "TOOLCHAIN list: ${toolchain_list[*]}"
 echo "CMAKE_BUILD_TYPE list: ${config_list[*]}"
 
-for bsp in "${bsp_list[@]}"; do
-  for os in "${os_list[@]}"; do
-    for toolchain in "${toolchain_list[@]}"; do
-      for config in "${config_list[@]}"; do
+for bsp in ${bsp_list[@]}; do
+  for os in ${os_list[@]}; do
+    for toolchain in ${toolchain_list[@]}; do
+      for config in ${config_list[@]}; do
         id=$bsp/$os/$toolchain/$config
         echo id=$id
         cfg_cmd="cmake -S . -B build/$id -G Ninja -DTARGET=$bsp -DOS=$os -DTOOLCHAIN=$toolchain -DCMAKE_BUILD_TYPE=$config"

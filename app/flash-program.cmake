@@ -1,7 +1,7 @@
-project(empty-app)
+project(flash-program)
 
 xmc_load_application(
-  NAME mtb-example-xmc-empty-app
+  NAME mtb-example-xmc-flash-program
   VERSION 1.0.0
 )
 

@@ -1,6 +1,6 @@
 xmc_load_library(
   NAME mtb-xmclib-cat3
-  VERSION 0.5.0
+  VERSION 3.0.0
 )
 
 set(MTB_XMCLIB_CAT3_SOURCES

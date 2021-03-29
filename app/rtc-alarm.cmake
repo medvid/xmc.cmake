@@ -1,7 +1,7 @@
-project(empty-app)
+project(rtc-alarm)
 
 xmc_load_application(
-  NAME mtb-example-xmc-empty-app
+  NAME mtb-example-xmc-rtc-alarm
   VERSION 1.0.0
 )
 

@@ -1,7 +1,7 @@
 # Download BSP sources from GitHub
 xmc_load_bsp(
   NAME KIT_XMC14_BOOT_001
-  VERSION 0.5.0
+  VERSION 1.0.0
 )
 
 # Set target MPN
@@ -29,9 +29,6 @@ set(BSP_SOURCES
 set(BSP_LINK_LIBRARIES
   mtb-xmclib-cat3
 )
-
-xmc_add_component(BSP_DESIGN_MODUS)
-xmc_add_component(CAT3)
 
 if(${TOOLCHAIN} STREQUAL GCC)
   list(APPEND BSP_SOURCES
@@ -62,8 +59,10 @@ endif()
 include_directories(${BSP_DIR})
 include_directories(${MTB_XMCLIB_CAT3_DIR}/CMSIS/Infineon/COMPONENT_XMC1400/Include)
 
+# Add common definitions and components
 xmc_add_component(BSP_DESIGN_MODUS)
 xmc_add_component(CAT3)
+xmc_add_component(XMC1)
 
 # Define BSP library
 add_library(bsp STATIC EXCLUDE_FROM_ALL ${BSP_SOURCES})
