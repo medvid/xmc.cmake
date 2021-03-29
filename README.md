@@ -74,6 +74,14 @@
 
     Note: valid license is required to use the IAR Compiler.
 
+10. _(Optional)_ Download and install LLVM/Clang Compiler:
+
+    https://github.com/llvm/llvm-project/releases/download/llvmorg-11.1.0/LLVM-11.1.0-win64.exe
+
+    Installation path assumed in this document:
+
+        C:/Program Files/LLVM
+
 ### Install prerequisites - macOS
 
 1. Download and install ModusToolbox 2.3:
@@ -189,7 +197,8 @@
                 "CY_TOOLS_PATHS": "${env:HOME}/ModusToolbox/tools_2.3",
                 "GCC_TOOLCHAIN_PATH": "C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2020-q4-major",
                 "ARM_TOOLCHAIN_PATH": "C:/Keil_v5/ARM/ARMCLANG",
-                "IAR_TOOLCHAIN_PATH": "C:/Program Files (x86)/IAR Systems/Embedded Workbench 8.4/arm"
+                "IAR_TOOLCHAIN_PATH": "C:/Program Files (x86)/IAR Systems/Embedded Workbench 8.4/arm",
+                "LLVM_TOOLCHAIN_PATH": "C:/Program Files/LLVM"
             }
         }
         ```
@@ -203,7 +212,8 @@
             "cortex-debug.armToolchainPath": "${config:modustoolbox.toolsPath}/gcc/bin",
             "cmake.configureSettings": {
                 "CY_TOOLS_PATHS": "/Applications/ModusToolbox/tools_2.3",
-                "GCC_TOOLCHAIN_PATH": "/Applications/ARM"
+                "GCC_TOOLCHAIN_PATH": "/Applications/ARM",
+                "LLVM_TOOLCHAIN_PATH": "/usr/local/opt/llvm"
             }
         }
         ```
@@ -217,7 +227,8 @@
             "cortex-debug.armToolchainPath": "${config:modustoolbox.toolsPath}/gcc/bin",
             "cmake.configureSettings": {
                 "CY_TOOLS_PATHS": "${env:HOME}/ModusToolbox/tools_2.3",
-                "GCC_TOOLCHAIN_PATH": "/opt/gcc-arm-none-eabi-10-2020-q4-major"
+                "GCC_TOOLCHAIN_PATH": "/opt/gcc-arm-none-eabi-10-2020-q4-major",
+                "LLVM_TOOLCHAIN_PATH": "/usr"
             }
         }
         ```
