@@ -251,8 +251,8 @@ Script `ci/build-all.sh` simplifies the automated build/compile testing of this 
 
 Arguments:
 
-* -b/--bsp - Select target BSP (KIT_XMC14_BOOT_001/...)
-* -o/--os - Select target OS (NOOS/FREERTOS/RTX)
+* -b/--bsp - Select target BSP (KIT_XMC14_BOOT_001/KIT_XMC47_RELAX_V1
+* -o/--os - Select target OS (NOOS/FREERTOS)
 * -t/--toolchain - Select toolchain (GCC/ARM/IAR)
 * -c/--config - Select CMake build configuration (Debug/Release)
 
@@ -280,7 +280,7 @@ Build all FreeRTOS enabled applications in Release mode:
 
 Azure Pipeline is executed for each commit in master and each GitHub Pull Request:
 
-https://dev.azure.com/vmedvid/xmc.cmake/_build?definitionId=8
+https://dev.azure.com/vmedvid/xmc.cmake/_build?definitionId=11
 
 The pipeline builds all applications with GCC 10.2.1 toolchain on [vmmedvid/psoc6.cmake](https://hub.docker.com/r/vmmedvid/psoc6.cmake) Docker image.
 The docker image is built on top of unofficial ModusToolbox Docker image: [vmmedvid/modustoolbox](https://hub.docker.com/r/vmmedvid/modustoolbox).
@@ -307,9 +307,6 @@ The docker image is built on top of unofficial ModusToolbox Docker image: [vmmed
             -DGCC_TOOLCHAIN_PATH="C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2020-q4-major" \
             -DCMAKE_BUILD_TYPE=Debug
 
-[ModusToolboxForWindows]: http://dlm.cypress.com.edgesuite.net/akdlm/downloadmanager/software/ModusToolbox/ModusToolbox_2.2/ModusToolbox_2.2.0.2801-windows-install.exe
-[ModusToolboxForMac]: http://dlm.cypress.com.edgesuite.net/akdlm/downloadmanager/software/ModusToolbox/ModusToolbox_2.2/ModusToolbox_2.2.0.2801-macos-install.pkg
-[ModusToolboxForLinux]: http://dlm.cypress.com.edgesuite.net/akdlm/downloadmanager/software/ModusToolbox/ModusToolbox_2.2/ModusToolbox_2.2.0.2801-linux-install.tar.gz
-[ModusToolboxForWindows-2.2.1]: http://dlm.cypress.com.edgesuite.net/akdlm/downloadmanager/software/ModusToolbox/ModusToolbox_2.2.1/ModusToolbox_2.2.1.3335-windows-install.exe
-[ModusToolboxForMac-2.2.1]: http://dlm.cypress.com.edgesuite.net/akdlm/downloadmanager/software/ModusToolbox/ModusToolbox_2.2.1/ModusToolbox_2.2.1.3335-macos-install.pkg
-[ModusToolboxForLinux-2.2.1]: http://dlm.cypress.com.edgesuite.net/akdlm/downloadmanager/software/ModusToolbox/ModusToolbox_2.2.1/ModusToolbox_2.2.1.3335-linux-install.tar.gz
+[ModusToolboxForWindows]: https://download.cypress.com/downloadmanager/software/ModusToolbox/ModusToolbox_2.3/ModusToolbox_2.3.0.4276-windows-install.exe
+[ModusToolboxForMac]: https://download.cypress.com/downloadmanager/software/ModusToolbox/ModusToolbox_2.3/ModusToolbox_2.3.0.4276-macos-install.pkg
+[ModusToolboxForLinux]: https://download.cypress.com/downloadmanager/software/ModusToolbox/ModusToolbox_2.3/ModusToolbox_2.3.0.4276-linux-install.tar.gz
