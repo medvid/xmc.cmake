@@ -13,7 +13,7 @@ project(ccu4-capture)
 
 xmc_load_application(
   NAME mtb-example-xmc-ccu4-capture
-  VERSION 0.5.0
+  VERSION 1.0.0
 )
 
 xmc_add_executable(

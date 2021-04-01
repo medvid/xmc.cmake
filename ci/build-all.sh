@@ -127,10 +127,10 @@ echo "OS list: ${os_list[*]}"
 echo "TOOLCHAIN list: ${toolchain_list[*]}"
 echo "CMAKE_BUILD_TYPE list: ${config_list[*]}"
 
-for bsp in "${bsp_list[@]}"; do
-  for os in "${os_list[@]}"; do
-    for toolchain in "${toolchain_list[@]}"; do
-      for config in "${config_list[@]}"; do
+for bsp in ${bsp_list[@]}; do
+  for os in ${os_list[@]}; do
+    for toolchain in ${toolchain_list[@]}; do
+      for config in ${config_list[@]}; do
         id=$bsp/$os/$toolchain/$config
         echo id=$id
         cfg_cmd="cmake -S . -B build/$id -G Ninja -DTARGET=$bsp -DOS=$os -DTOOLCHAIN=$toolchain -DCMAKE_BUILD_TYPE=$config"

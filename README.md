@@ -4,39 +4,35 @@
 
 ## Prerequisites
 
-* ModusToolbox 2.2.1
+* ModusToolbox 2.3
 * CMake >= 3.16
 * Ninja build system
 
 ### Install prerequisites - Windows
 
-1. Download and install ModusToolbox 2.2:
+1. Download and install ModusToolbox 2.3:
 
     [https://www.cypress.com/ModusToolboxForWindows][ModusToolboxForWindows]
 
-2. Download and install ModusToolbox 2.2.1 (patch on top of 2.2):
-
-    [https://www.cypress.com/file/515781/download][ModusToolboxForWindows-2.2.1]
-
-3. Download and install J-Link Software:
+2. Download and install J-Link Software:
 
     https://www.segger.com/downloads/jlink/JLink_Windows.exe
 
-4. Download and install the latest Git for Windows:
+3. Download and install the latest Git for Windows:
 
     https://gitforwindows.org/
 
-5. Download and install the latest CMake win64-x64 Installer:
+4. Download and install the latest CMake win64-x64 Installer:
 
     https://cmake.org/download/
 
-6. Download Ninja executable, add to user PATH:
+5. Download Ninja executable, add to user PATH:
 
     https://github.com/ninja-build/ninja/releases
 
-    CLI example: to install Ninja 1.10.0 to %LOCALAPPDATA%\Programs\Ninja, execute the below commands in Git Bash terminal:
+    CLI example: to install Ninja 1.10.2 to %LOCALAPPDATA%\Programs\Ninja, execute the below commands in Git Bash terminal:
 
-        curl -fsSL https://github.com/ninja-build/ninja/releases/download/v1.10.0/ninja-win.zip -o $TMPDIR/ninja-win.zip
+        curl -fsSL https://github.com/ninja-build/ninja/releases/download/v1.10.2/ninja-win.zip -o $TMPDIR/ninja-win.zip
         mkdir -p $LOCALAPPDATA/Programs/Ninja
         unzip $TMPDIR/ninja-win.zip -d $LOCALAPPDATA/Programs/Ninja
 
@@ -56,7 +52,7 @@
 
     Example installation path:
 
-        C:/Program Files/ARMCompiler6.13
+        C:/Program Files/ARMCompiler6.15
 
     Arm Compiler 6 is also bundled with Keil uVision 5 IDE:
 
@@ -78,31 +74,35 @@
 
     Note: valid license is required to use the IAR Compiler.
 
+10. _(Optional)_ Download and install LLVM/Clang Compiler:
+
+    https://github.com/llvm/llvm-project/releases/download/llvmorg-11.1.0/LLVM-11.1.0-win64.exe
+
+    Installation path assumed in this document:
+
+        C:/Program Files/LLVM
+
 ### Install prerequisites - macOS
 
-1. Download and install ModusToolbox 2.2:
+1. Download and install ModusToolbox 2.3:
 
     [https://www.cypress.com/ModusToolboxForMac][ModusToolboxForMac]
 
-2. Download and install ModusToolbox 2.2.1 (patch on top of 2.2):
-
-    [https://www.cypress.com/file/515776/download][ModusToolboxForMac-2.2.1]
-
-3. Download and install J-Link Software:
+2. Download and install J-Link Software:
 
     https://www.segger.com/downloads/jlink/JLink_MacOSX.pkg
 
-4. Install Xcode - this provides git client
+3. Install Xcode - this provides git client
 
-5. Download and install Homebrew Package Manager:
+4. Download and install Homebrew Package Manager:
 
     https://brew.sh
 
-6. Install CMake and Ninja using Homebrew:
+5. Install CMake and Ninja using Homebrew:
 
     brew install cmake ninja
 
-7. _(Optional)_ Download and install the latest GNU Arm Embedded toolchain:
+6. _(Optional)_ Download and install the latest GNU Arm Embedded toolchain:
 
     https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads
 
@@ -112,19 +112,15 @@
 
 ### Install prerequisites - Linux
 
-1. Download and install ModusToolbox 2.2:
+1. Download and install ModusToolbox 2.3:
 
     [https://www.cypress.com/ModusToolboxForLinux][ModusToolboxForLinux]
 
-2. Download and install ModusToolbox 2.2.1 (patch on top of 2.2):
-
-    [https://www.cypress.com/file/515771/download][ModusToolboxForLinux-2.2.1]
-
-3. Download and install J-Link Software:
+2. Download and install J-Link Software:
 
     https://www.segger.com/downloads/jlink/JLink_Linux_x86_64.deb
 
-4. Download and install Git, CMake>=3.16 and Ninja using the system package manager.
+3. Download and install Git, CMake>=3.16 and Ninja using the system package manager.
 
     Example for Ubuntu 20.04:
 
@@ -133,7 +129,7 @@
     Note: Ubuntu 18.04 provides an old version CMake, not compatible with CMake recipes in this repo.
     To download latest CMake package, follow the instructions at https://apt.kitware.com.
 
-5. _(Optional)_ Download and install the latest GNU Arm Embedded toolchain:
+4. _(Optional)_ Download and install the latest GNU Arm Embedded toolchain:
 
     https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads
 
@@ -194,14 +190,15 @@
 
         ```json
         {
-            "modustoolbox.toolsPath": "${env:HOME}/ModusToolbox/tools_2.2",
+            "modustoolbox.toolsPath": "${env:HOME}/ModusToolbox/tools_2.3",
             "cortex-debug.openocdPath": "${config:modustoolbox.toolsPath}/openocd/bin/openocd",
             "cortex-debug.armToolchainPath": "${config:modustoolbox.toolsPath}/gcc/bin",
             "cmake.configureSettings": {
-                "CY_TOOLS_PATHS": "${env:HOME}/ModusToolbox/tools_2.2",
+                "CY_TOOLS_PATHS": "${env:HOME}/ModusToolbox/tools_2.3",
                 "GCC_TOOLCHAIN_PATH": "C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2020-q4-major",
                 "ARM_TOOLCHAIN_PATH": "C:/Keil_v5/ARM/ARMCLANG",
-                "IAR_TOOLCHAIN_PATH": "C:/Program Files (x86)/IAR Systems/Embedded Workbench 8.4/arm"
+                "IAR_TOOLCHAIN_PATH": "C:/Program Files (x86)/IAR Systems/Embedded Workbench 8.4/arm",
+                "LLVM_TOOLCHAIN_PATH": "C:/Program Files/LLVM"
             }
         }
         ```
@@ -210,12 +207,13 @@
 
         ```json
         {
-            "modustoolbox.toolsPath": "/Applications/ModusToolbox/tools_2.2",
+            "modustoolbox.toolsPath": "/Applications/ModusToolbox/tools_2.3",
             "cortex-debug.openocdPath": "${config:modustoolbox.toolsPath}/openocd/bin/openocd",
             "cortex-debug.armToolchainPath": "${config:modustoolbox.toolsPath}/gcc/bin",
             "cmake.configureSettings": {
-                "CY_TOOLS_PATHS": "/Applications/ModusToolbox/tools_2.2",
-                "GCC_TOOLCHAIN_PATH": "/Applications/ARM"
+                "CY_TOOLS_PATHS": "/Applications/ModusToolbox/tools_2.3",
+                "GCC_TOOLCHAIN_PATH": "/Applications/ARM",
+                "LLVM_TOOLCHAIN_PATH": "/usr/local/opt/llvm"
             }
         }
         ```
@@ -224,12 +222,13 @@
 
         ```json
         {
-            "modustoolbox.toolsPath": "${env:HOME}/ModusToolbox/tools_2.2",
+            "modustoolbox.toolsPath": "${env:HOME}/ModusToolbox/tools_2.3",
             "cortex-debug.openocdPath": "${config:modustoolbox.toolsPath}/openocd/bin/openocd",
             "cortex-debug.armToolchainPath": "${config:modustoolbox.toolsPath}/gcc/bin",
             "cmake.configureSettings": {
-                "CY_TOOLS_PATHS": "${env:HOME}/tools_2.2",
-                "GCC_TOOLCHAIN_PATH": "/opt/gcc-arm-none-eabi-10-2020-q4-major"
+                "CY_TOOLS_PATHS": "${env:HOME}/ModusToolbox/tools_2.3",
+                "GCC_TOOLCHAIN_PATH": "/opt/gcc-arm-none-eabi-10-2020-q4-major",
+                "LLVM_TOOLCHAIN_PATH": "/usr"
             }
         }
         ```
@@ -252,8 +251,8 @@ Script `ci/build-all.sh` simplifies the automated build/compile testing of this 
 
 Arguments:
 
-* -b/--bsp - Select target BSP (KIT_XMC14_BOOT_001/...)
-* -o/--os - Select target OS (NOOS/FREERTOS/RTX)
+* -b/--bsp - Select target BSP (KIT_XMC14_BOOT_001/KIT_XMC47_RELAX_V1
+* -o/--os - Select target OS (NOOS/FREERTOS)
 * -t/--toolchain - Select toolchain (GCC/ARM/IAR)
 * -c/--config - Select CMake build configuration (Debug/Release)
 
@@ -281,7 +280,7 @@ Build all FreeRTOS enabled applications in Release mode:
 
 Azure Pipeline is executed for each commit in master and each GitHub Pull Request:
 
-https://dev.azure.com/vmedvid/xmc.cmake/_build?definitionId=8
+https://dev.azure.com/vmedvid/xmc.cmake/_build?definitionId=11
 
 The pipeline builds all applications with GCC 10.2.1 toolchain on [vmmedvid/psoc6.cmake](https://hub.docker.com/r/vmmedvid/psoc6.cmake) Docker image.
 The docker image is built on top of unofficial ModusToolbox Docker image: [vmmedvid/modustoolbox](https://hub.docker.com/r/vmmedvid/modustoolbox).
@@ -308,9 +307,6 @@ The docker image is built on top of unofficial ModusToolbox Docker image: [vmmed
             -DGCC_TOOLCHAIN_PATH="C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2020-q4-major" \
             -DCMAKE_BUILD_TYPE=Debug
 
-[ModusToolboxForWindows]: http://dlm.cypress.com.edgesuite.net/akdlm/downloadmanager/software/ModusToolbox/ModusToolbox_2.2/ModusToolbox_2.2.0.2801-windows-install.exe
-[ModusToolboxForMac]: http://dlm.cypress.com.edgesuite.net/akdlm/downloadmanager/software/ModusToolbox/ModusToolbox_2.2/ModusToolbox_2.2.0.2801-macos-install.pkg
-[ModusToolboxForLinux]: http://dlm.cypress.com.edgesuite.net/akdlm/downloadmanager/software/ModusToolbox/ModusToolbox_2.2/ModusToolbox_2.2.0.2801-linux-install.tar.gz
-[ModusToolboxForWindows-2.2.1]: http://dlm.cypress.com.edgesuite.net/akdlm/downloadmanager/software/ModusToolbox/ModusToolbox_2.2.1/ModusToolbox_2.2.1.3335-windows-install.exe
-[ModusToolboxForMac-2.2.1]: http://dlm.cypress.com.edgesuite.net/akdlm/downloadmanager/software/ModusToolbox/ModusToolbox_2.2.1/ModusToolbox_2.2.1.3335-macos-install.pkg
-[ModusToolboxForLinux-2.2.1]: http://dlm.cypress.com.edgesuite.net/akdlm/downloadmanager/software/ModusToolbox/ModusToolbox_2.2.1/ModusToolbox_2.2.1.3335-linux-install.tar.gz
+[ModusToolboxForWindows]: https://download.cypress.com/downloadmanager/software/ModusToolbox/ModusToolbox_2.3/ModusToolbox_2.3.0.4276-windows-install.exe
+[ModusToolboxForMac]: https://download.cypress.com/downloadmanager/software/ModusToolbox/ModusToolbox_2.3/ModusToolbox_2.3.0.4276-macos-install.pkg
+[ModusToolboxForLinux]: https://download.cypress.com/downloadmanager/software/ModusToolbox/ModusToolbox_2.3/ModusToolbox_2.3.0.4276-linux-install.tar.gz

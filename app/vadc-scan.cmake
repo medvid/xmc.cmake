@@ -1,7 +1,7 @@
-project(empty-app)
+project(vadc-scan)
 
 xmc_load_application(
-  NAME mtb-example-xmc-empty-app
+  NAME mtb-example-xmc-vadc-scan
   VERSION 1.0.0
 )
 

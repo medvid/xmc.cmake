@@ -1,7 +1,7 @@
 # Download BSP sources from GitHub
 xmc_load_bsp(
   NAME KIT_XMC47_RELAX_V1
-  VERSION 0.5.0
+  VERSION 1.0.0
 )
 
 # Set target MPN
@@ -32,9 +32,6 @@ set(BSP_LINK_LIBRARIES
   mtb-xmclib-cat3
 )
 
-xmc_add_component(BSP_DESIGN_MODUS)
-xmc_add_component(CAT3)
-
 if(${TOOLCHAIN} STREQUAL GCC)
   list(APPEND BSP_SOURCES
     ${MTB_XMCLIB_CAT3_DIR}/CMSIS/Infineon/COMPONENT_XMC4700/Source/TOOLCHAIN_GCC_ARM/startup_XMC4700.S
@@ -42,7 +39,9 @@ if(${TOOLCHAIN} STREQUAL GCC)
   )
   set(BSP_LINKER_SCRIPT ${BSP_DIR}/TOOLCHAIN_GCC_ARM/XMC4700x2048.ld)
 elseif(${TOOLCHAIN} STREQUAL ARM)
-  list(APPEND BSP_SOURCES
+  # ARM linker workaround: do not add startup assembly to libbsp.a
+  # The assembly source is linked directly by xmc_add_executable
+  set(BSP_STARTUP
     ${MTB_XMCLIB_CAT3_DIR}/CMSIS/Infineon/COMPONENT_XMC4700/Source/TOOLCHAIN_ARM/startup_XMC4700.s
   )
   set(BSP_LINKER_SCRIPT ${BSP_DIR}/TOOLCHAIN_ARM/XMC4700x2048.sct)
@@ -64,8 +63,11 @@ endif()
 include_directories(${BSP_DIR})
 include_directories(${MTB_XMCLIB_CAT3_DIR}/CMSIS/Infineon/COMPONENT_XMC4700/Include)
 
+# Add common definitions and components
+add_definitions(-DTARGET_KIT_XMC47_RELAX_V1)
 xmc_add_component(BSP_DESIGN_MODUS)
 xmc_add_component(CAT3)
+xmc_add_component(XMC4)
 
 # Define BSP library
 add_library(bsp STATIC EXCLUDE_FROM_ALL ${BSP_SOURCES})
